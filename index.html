@@ -71,61 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-c-struct-size" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/blog/2023/02/09/c-struct-size/" class="article-date">
-  <time class="dt-published" datetime="2023-02-09T02:57:13.043Z" itemprop="datePublished">2023-02-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/blog/2023/02/09/c-struct-size/">C语言中的结构体对齐</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hello</span> &#123;</span></span><br><span class="line">    <span class="type">uint8_t</span> a;</span><br><span class="line">    <span class="type">uint32_t</span> b;</span><br><span class="line">    <span class="type">uint16_t</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>hello</code>结构体的大小为 <strong>12</strong>, 因为c语言中结构体的大小遵循四大原则.</p>
-<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ol>
-<li>成员在其大小倍数的位置访问速度最快. <code>uint16_t</code>类型的放到2的倍数地址位置访问最快: <code>0,2,4,6</code></li>
-<li>允许指定PACK大小来规避原则1.</li>
-<li>(未理解) 结构体的大小为最大成员的整数倍</li>
-<li>(未理解) 当A结构内含有结构B时，B在A中的偏移地址为B结构内最大元素类型的大小的整数倍</li>
-</ol>
-<p>如上面的例子, <code>a</code>显然放在地址<code>0</code>处; <code>b</code> 最好放在<code>4,8,12</code>处速度最快, 因此放置于<code>4</code>; <code>c</code> 最好放置在<code>2,4,6,8,10</code>, 因此放置于<code>8</code>. </p>
-<p>同时由于原则3, 整体大小为12.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://tatalake.github.io/blog/2023/02/09/c-struct-size/" data-id="cldwiegvf0000awop8av77yi6" data-title="C语言中的结构体对齐" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/c/" rel="tag">c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-pages-hexo-action" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/blog/2023/02/09/pages-hexo-action/" class="article-date">
-  <time class="dt-published" datetime="2023-02-09T02:57:13.043Z" itemprop="datePublished">2023-02-09</time>
+  <time class="dt-published" datetime="2023-02-09T06:00:54.414Z" itemprop="datePublished">2023-02-09</time>
 </a>
     
   </div>
@@ -150,11 +99,76 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://tatalake.github.io/blog/2023/02/09/pages-hexo-action/" data-id="cldwiegvm0001awop66jdfekx" data-title="使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署" class="article-share-link">Share</a>
+      <a data-url="https://tatalake.github.io/blog/2023/02/09/pages-hexo-action/" data-id="cldwoylyh0000cqom5em5dt0n" data-title="使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-c-struct-size" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/blog/2023/02/09/c-struct-size/" class="article-date">
+  <time class="dt-published" datetime="2023-02-09T06:00:54.414Z" itemprop="datePublished">2023-02-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/blog/2023/02/09/c-struct-size/">C语言中的结构体对齐</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> pack(2)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">st</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">uint8_t</span> a;</span><br><span class="line">    <span class="type">uint32_t</span> b;</span><br><span class="line">    <span class="type">uint16_t</span> c;</span><br><span class="line">&#125;__attribute__((aligned(<span class="number">16</span>))) st;</span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> pack()</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hello</code>结构体的大小为 <strong>16</strong>, 因为c语言中结构体的大小遵循三大原则.</p>
+<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ol>
+<li>成员在其大小倍数的位置访问速度最快</li>
+<li>使用#pragma pack(m)来限制内部紧凑性</li>
+<li>使用__attribute__((aligned(n)))来限制外部对齐</li>
+</ol>
+<h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><ol>
+<li>仅考虑原则1， 则<code>a</code>在<code>0</code>, <code>b</code>在<code>4</code>,  <code>c</code>在<code>8</code>; 整体大小应该为<code>10</code>;</li>
+<li>结合原则2， <code>pack(2)</code>表示按照<code>2</code>的倍数进行处理， 尽可能<strong>内部</strong>紧凑。则<code>a</code>在<code>0</code>, <code>b</code>在<code>2</code>, <code>c</code>在<code>6</code>; 整体大小应该为<code>8</code>;</li>
+<li>结合原则3， <code>aligned(16)</code>表示结构整体应当按16<strong>外部</strong>对齐, 则偏移不变，但是整体大小应该为<code>16</code>;</li>
+</ol>
+<h2 id="答疑"><a href="#答疑" class="headerlink" title="答疑"></a>答疑</h2><ol>
+<li>如果不设置, pack和aligned是多少？</li>
+</ol>
+<p>答：与编译器和目标架构有关。</p>
+<ol start="2">
+<li>{uint8_t, uint16_t} , pack(8), aligned(1) 该配置下为什么大小为<code>4</code>, 不应该为<code>8</code>吗？</li>
+</ol>
+<p>答：pack(8)约束太宽松。成员最大为4字节，按照原则1已经满足约束条件。</p>
+<ol start="2">
+<li>{uint8_t, uint16_t, uint8_t} , pack(2), aligned(1) 该配置下为什么大小为<code>6</code>, 不应该为<code>5</code>吗？</li>
+</ol>
+<p>答：原因在于最后存在一个补足位；该补足位不是因为pack(2), pack是为了紧凑，不补足既满足pack(2)又紧凑不是更好，同时aligned(1)保证外部对此没有要求。补足是因为第二位的<code>uint16_t</code>和原则1，对于单个<code>st</code>其大小为5当然没问题。原因在于原则1，当存在<code>st[10]</code>这种数组时，访问第一个元素没问题符合原则1，但是访问第二个元素的第二个成员就会出现奇地址，显然不满足原则1，因此需要补全一个字节。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://tatalake.github.io/blog/2023/02/09/c-struct-size/" data-id="cldwoylym0001cqomaediby5b" data-title="C语言中的结构体对齐" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/c/" rel="tag">c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
 
     </footer>
   </div>
@@ -209,11 +223,11 @@
       <ul>
         
           <li>
-            <a href="/blog/2023/02/09/c-struct-size/">C语言中的结构体对齐</a>
+            <a href="/blog/2023/02/09/pages-hexo-action/">使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署</a>
           </li>
         
           <li>
-            <a href="/blog/2023/02/09/pages-hexo-action/">使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署</a>
+            <a href="/blog/2023/02/09/c-struct-size/">C语言中的结构体对齐</a>
           </li>
         
       </ul>
