@@ -1,5 +1,7 @@
 ---
 title: 使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署
+tags:
+- 运维
 ---
 
 ## 搭建博客
