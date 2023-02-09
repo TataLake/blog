@@ -46,7 +46,6 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
-        About: /about
     links:
         Download on GitHub:
             icon: fab fa-github
