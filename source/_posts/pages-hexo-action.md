@@ -1,5 +1,6 @@
 ---
 title: 使用Github Pages和Hexo搭建博客，利用Github Action实现自动部署
+date: 2022-02-24 08:00:00
 tags:
 - 运维
 ---
